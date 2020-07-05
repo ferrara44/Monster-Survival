@@ -22,10 +22,8 @@ func _on_Timer_timeout():
 	print (side)
 	match side:
 		1: 
-			var x = screensize.x
-			var y = rand.randf_range(0, screensize.y)
-			enemy.position.x = x
-			enemy.position.y = y
+			enemy.position.x = screensize.x
+			enemy.position.y = rand.randf_range(0, screensize.y)
 			add_child(enemy)
 		2:
 			var x = 0

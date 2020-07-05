@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var mob_types = ["skeleton", "muddy", "chomper"]
+#var hp, dmg
 
 func _ready():
 	 $AnimatedSprite.animation = mob_types[randi() % mob_types.size()]

@@ -31,9 +31,14 @@ animations = [ {
 "name": "skeleton",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": false,
-"name": "chomper_death",
+"name": "skeleton_death",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "muddy",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 21 ), ExtResource( 22 ) ],
@@ -41,35 +46,31 @@ animations = [ {
 "name": "muddy_death",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 20 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "chomper_death",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "chomper",
 "speed": 9.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "muddy",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "skeleton_death",
-"speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 5.0
 
-[node name="Skeleton" type="Node2D"]
+[node name="Enemy" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 scale = Vector2( 3, 3 )
 script = ExtResource( 23 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 0, 1.33333 )
 frames = SubResource( 1 )
-animation = "muddy_death"
-frame = 2
+animation = "muddy"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
